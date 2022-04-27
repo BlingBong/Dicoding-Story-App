@@ -1,0 +1,78 @@
+<resources>
+    <!--initial and literal value-->
+    <string name="app_name" translatable="false">Dicoding Story App</string>
+    <string name="copyright" translatable="false">© 2022 Rivano Kurniawan</string>
+    <string name="dicoding_logo" translatable="false">Dicoding Logo</string>
+    <string name="go_login">Already have account?</string>
+    <string name="go_register">Doesn\'t have account?</string>
+    <string name="translate">Translate</string>
+    <string name="story_picture">Story Picture</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="add_story">Add Story</string>
+    <string name="choose_pic">Choose a Picture</string>
+    <string name="logout" translatable="false">Logout</string>
+    <string name="toggle_visibility">Toggle Password Visibility</string>
+    <string name="image_preview">Image Preview</string>
+    <string name="camera_switch">Camera Switch</string>
+    <string name="map_mode">View Stories in Map Mode</string>
+    <string name="story_map">Story Map</string>
+    <string name="current_location">Current Location</string>
+    <string name="custom_location">Custom Location</string>
+    <string name="choose_location">Choose Location</string>
+    <string name="detect_current_loc">Detect Current Location</string>
+
+    <!--map types-->
+    <string name="normal_type" translatable="false">Normal</string>
+    <string name="satellite_type" translatable="false">Satellite</string>
+    <string name="terrain_type" translatable="false">Terrain</string>
+    <string name="hybrid_type" translatable="false">Hybrid</string>
+
+    <!--button text-->
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="btn_disabled">Fill All First</string>
+    <string name="choose_this_location">Choose This Location</string>
+    <string name="change_location">Change Location</string>
+
+    <!--hint-->
+    <string name="name_hint">Enter your name</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="open_cam">Open Camera</string>
+    <string name="pick_gallery">Pick From Gallery</string>
+    <string name="upload">Upload Story</string>
+    <string name="story_desc">Tell us about your story!</string>
+
+    <!--alert and message-->
+    <string name="success">Success</string>
+    <string name="cont">OK &amp; Continue</string>
+    <string name="failed">Failed</string>
+    <string name="success_regist_message">Registration Successful! You may Log In to your account now.</string>
+    <string name="failed_regist_message">Registration Unsuccessful. Check your connection and try again.</string>
+    <string name="success_login_message">Login Successful! Welcome to Dicoding Story App!</string>
+    <string name="failed_login_message">Login Unsuccessful. User not found.</string>
+    <string name="success_logout_message">Logout Successful!</string>
+    <string name="pass_error">Password must consist of minimum 6 character.</string>
+    <string name="email_error">Email must use valid format.</string>
+    <string name="no_data">No data found / currently empty.</string>
+    <string name="fail_fetch">Failed to fetch data, please consider checking your connection.</string>
+    <string name="take_photo_failed">Failed to take pictures.</string>
+    <string name="start_cam_failed">Failed to start camera.</string>
+    <string name="no_image">Please enter the image file first.</string>
+    <string name="no_desc">Please enter image description first.</string>
+    <string name="no_permission">Didn\'t get permission.</string>
+    <string name="upload_fail">Story Upload Failed.</string>
+    <string name="upload_success">Story Uploaded!</string>
+    <string name="style_failed">Style parsing failed.</string>
+    <string name="style_not_found">Can\'t find style. Error:</string>
+    <string name="loc_not_found">Current location not found. Try Again.</string>
+    <string name="location_null">Please choose location first.</string>
+    <string name="attention">Attention</string>
+    <string name="current_loc_wont_work">Current Location feature won\'t work due to lack of permissions.</string>
+    <string name="show_permission_dialog">Show Permission Dialog</string>
+
+    <!--data related-->
+    <string name="created_at">Created At: %s</string>
+    <string name="story_detail">%s\'s Story Detail</string>
+</resources>

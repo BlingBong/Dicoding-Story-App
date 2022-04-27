@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_story_map"
+        android:icon="@drawable/ic_map"
+        android:title="@string/map_mode"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_translate"
+        android:icon="@drawable/ic_translate"
+        android:title="@string/translate"
+        app:showAsAction="ifRoom" />
+
+    <group android:menuCategory="container">
+        <item
+            android:id="@+id/menu_logout"
+            android:title="@string/logout" />
+    </group>
+</menu>

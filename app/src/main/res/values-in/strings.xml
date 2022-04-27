@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--initial and literal value-->
+    <string name="go_login">Sudah memiliki akun?</string>
+    <string name="go_register">Belum memiliki akun?</string>
+    <string name="translate">Terjemahkan</string>
+    <string name="story_picture">Gambar Cerita</string>
+    <string name="name">Nama</string>
+    <string name="description">Deskripsi</string>
+    <string name="add_story">Tambahkan Cerita</string>
+    <string name="choose_pic">Pilih Gambar</string>
+    <string name="toggle_visibility">Alihkan Visibilitas Kata Sandi</string>
+    <string name="image_preview">Tampilan Gambar</string>
+    <string name="camera_switch">Ganti Kamera</string>
+    <string name="map_mode">Lihat Cerita dalam Mode Peta</string>
+    <string name="story_map">Peta Cerita</string>
+    <string name="current_location">Lokasi Saat Ini</string>
+    <string name="custom_location">Lokasi Kustom</string>
+    <string name="choose_location">Pilih Lokasi</string>
+    <string name="detect_current_loc">Deteksi Lokasi Saat Ini</string>
+
+    <!--button text-->
+    <string name="register">Daftar</string>
+    <string name="login">Masuk</string>
+    <string name="btn_disabled">Isi Terlebih Dulu</string>
+    <string name="choose_this_location">Pilih Lokasi Ini</string>
+    <string name="change_location">Ubah Lokasi</string>
+
+    <!--hint-->
+    <string name="name_hint">Masukkan nama Anda</string>
+    <string name="email_hint">Masukkan email Anda</string>
+    <string name="password_hint">Masukkan kata sandi Anda</string>
+    <string name="open_cam">Buka Kamera</string>
+    <string name="pick_gallery">Pilih Dari Galeri</string>
+    <string name="upload">Unggah Cerita</string>
+    <string name="story_desc">Ceritakan kisah Anda kepada kami!</string>
+
+    <!--alert and message-->
+    <string name="success">Berhasil</string>
+    <string name="cont">OK &amp; Lanjut</string>
+    <string name="failed">Gagal</string>
+    <string name="success_regist_message">Registrasi Berhasil! Anda dapat melakukan Log In ke akun Anda sekarang.</string>
+    <string name="failed_regist_message">Registrasi Gagal. Cek koneksi Anda dan coba lagi.</string>
+    <string name="success_login_message">Login Berhasil! Selamat datang di Dicoding Story App!</string>
+    <string name="failed_login_message">Login Gagal. Pengguna tidak ditemukan.</string>
+    <string name="success_logout_message">Logout Berhasil!</string>
+    <string name="pass_error">Kata sandi harus lebih dari 6 karakter.</string>
+    <string name="email_error">Email harus menggunakan format yang benar.</string>
+    <string name="no_data">Tidak ada data yang ditemukan / masih kosong.</string>
+    <string name="fail_fetch">Gagal mengambil data, mohon cek koneksi Anda.</string>
+    <string name="take_photo_failed">Gagal mengambil gambar.</string>
+    <string name="start_cam_failed">Gagal membuka kamera.</string>
+    <string name="no_image">Mohon masukkan berkas gambar terlebih dahulu.</string>
+    <string name="no_desc">Mohon masukkan deskripsi gambar terlebih dahulu.</string>
+    <string name="no_permission">Tidak mendapatkan izin.</string>
+    <string name="upload_fail">Gagal Mengunggah Cerita.</string>
+    <string name="upload_success">Cerita Berhasil Diunggah!</string>
+    <string name="style_failed">Parsing style gagal.</string>
+    <string name="loc_not_found">Lokasi saat ini tidak ditemukan. Coba lagi.</string>
+    <string name="style_not_found">Tidak dapat menemukan style. Error:</string>
+    <string name="location_null">Mohon pilih lokasi terlebih dahulu.</string>
+    <string name="attention">Perhatian</string>
+    <string name="current_loc_wont_work">Fitur Lokasi Saat Ini tidak akan berfungsi karena kurangnya izin.</string>
+    <string name="show_permission_dialog">Tampilkan Dialog Izin</string>
+
+    <!--data related-->
+    <string name="created_at">Dibuat Pada: %s</string>
+    <string name="story_detail">Detail Cerita %s</string>
+</resources>
