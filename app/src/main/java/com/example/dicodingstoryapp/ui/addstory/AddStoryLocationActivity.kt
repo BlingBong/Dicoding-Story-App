@@ -59,10 +59,12 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.uiSettings.isMapToolbarEnabled = true
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.map_options, menu)
-        return true
+
+        menu.findItem(R.id.menu_story_list).isVisible = false
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -93,22 +95,6 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-
-//    private val requestPermissionLauncher =
-//        registerForActivityResult(
-//            ActivityResultContracts.RequestPermission()
-//        ) { isGranted: Boolean ->
-//            if (isGranted) {
-//                getMyLastLocation()
-//            } else {
-//                Toast.makeText(
-//                    this,
-//                    getString(R.string.no_permission),
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                finish()
-//            }
-//        }
 
     private val requestPermissionLauncher =
         registerForActivityResult(
@@ -155,6 +141,7 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
                         getString(R.string.loc_not_found),
                         Toast.LENGTH_SHORT
                     ).show()
+
                 }
             }
         } else {
@@ -178,8 +165,6 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
         latitude = location.latitude
         longitude = location.longitude
 
-        Toast.makeText(this, currentLocation.toString(), Toast.LENGTH_SHORT).show()
-
         marker = mMap.addMarker(
             MarkerOptions()
                 .position(currentLocation)
@@ -196,8 +181,6 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
 
             latitude = latLng.latitude
             longitude = latLng.longitude
-
-            Toast.makeText(this, latLng.toString(), Toast.LENGTH_SHORT).show()
 
             marker = mMap.addMarker(
                 MarkerOptions()
@@ -216,8 +199,6 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             latitude = pointOfInterest.latLng.latitude
             longitude = pointOfInterest.latLng.longitude
 
-            Toast.makeText(this, pointOfInterest.latLng.toString(), Toast.LENGTH_SHORT).show()
-
             marker = mMap.addMarker(
                 MarkerOptions()
                     .position(pointOfInterest.latLng)
@@ -233,8 +214,6 @@ class AddStoryLocationActivity : AppCompatActivity(), OnMapReadyCallback {
             longitude = location.longitude
 
             marker?.remove()
-
-            Toast.makeText(this, currentLocation.toString(), Toast.LENGTH_SHORT).show()
 
             marker = mMap.addMarker(
                 MarkerOptions()

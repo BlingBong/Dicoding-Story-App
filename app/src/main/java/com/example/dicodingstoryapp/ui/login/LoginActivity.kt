@@ -16,11 +16,10 @@ import android.view.WindowManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.dicodingstoryapp.R
 import com.example.dicodingstoryapp.databinding.ActivityLoginBinding
-import com.example.dicodingstoryapp.ui.story.StoryListActivity
 import com.example.dicodingstoryapp.ui.register.RegisterActivity
+import com.example.dicodingstoryapp.ui.story.StoryListActivity
 import com.example.dicodingstoryapp.utils.ApiCallbackString
 import com.example.dicodingstoryapp.utils.validateEmail
 

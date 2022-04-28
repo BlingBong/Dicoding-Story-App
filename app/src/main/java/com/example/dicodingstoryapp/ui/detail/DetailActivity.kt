@@ -59,8 +59,7 @@ class DetailActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.option_menu, menu)
 
-        val logoutMenu = menu.findItem(R.id.menu_logout)
-        logoutMenu.isVisible = false
+        menu.findItem(R.id.menu_logout).isVisible = false
         return super.onCreateOptionsMenu(menu)
     }
 

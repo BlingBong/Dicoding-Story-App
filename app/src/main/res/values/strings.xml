@@ -34,6 +34,7 @@
     <string name="btn_disabled">Fill All First</string>
     <string name="choose_this_location">Choose This Location</string>
     <string name="change_location">Change Location</string>
+    <string name="retry">Retry</string>
 
     <!--hint-->
     <string name="name_hint">Enter your name</string>

@@ -14,15 +14,17 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dicodingstoryapp.R
 import com.example.dicodingstoryapp.databinding.ActivityStoryListBinding
+import com.example.dicodingstoryapp.ui.adapter.LoadingStateAdapter
 import com.example.dicodingstoryapp.ui.adapter.StoryAdapter
 import com.example.dicodingstoryapp.ui.addstory.AddStoryActivity
 import com.example.dicodingstoryapp.ui.login.LoginActivity
-import com.example.dicodingstoryapp.utils.ApiCallbackString
 
 class StoryListActivity : AppCompatActivity() {
     private lateinit var storyListBinding: ActivityStoryListBinding
-    private lateinit var storyAdapter: StoryAdapter
-    private val storyViewModel: StoryViewModel by viewModels()
+
+    private val storyListViewModel: StoryListViewModel by viewModels {
+        ViewModelFactory(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,43 +32,33 @@ class StoryListActivity : AppCompatActivity() {
         setContentView(storyListBinding.root)
 
         setupListener()
-        setupViewModel()
         setupOrientation()
+        setupViewModel()
     }
 
     private fun setupViewModel() {
-        storyViewModel.getUser().observe(this) {
+        storyListViewModel.getUser().observe(this) { it ->
+            storyListBinding.pbList.visibility = View.VISIBLE
             if (!it.isLogin) {
                 startActivity(Intent(this, LoginActivity::class.java))
+                storyListBinding.pbList.visibility = View.GONE
                 finish()
             } else {
-                storyViewModel.getAllStories(it.token, object : ApiCallbackString {
-                    override fun responseState(success: Boolean, message: String) {
-                        showLoading(true)
-                        if (!success) {
-                            AlertDialog.Builder(this@StoryListActivity).apply {
-                                setTitle(getString(R.string.failed))
-                                setMessage(getString(R.string.fail_fetch))
-                                setPositiveButton(getString(R.string.cont), null)
-                                create()
-                                show()
-                            }
-                            showLoading(false)
+                storyListViewModel.getAllStories(it.token).observe(this) {
+                    val storyAdapter = StoryAdapter()
+                    storyListBinding.pbList.visibility = View.GONE
+                    storyListBinding.rvStory.adapter = storyAdapter.withLoadStateFooter(
+                        footer = LoadingStateAdapter {
+                            storyAdapter.retry()
                         }
-                    }
-                })
-
-                storyViewModel.itemStory.observe(this) { itemStory ->
-                    storyAdapter.setList(itemStory)
-                    showLoading(false)
+                    )
+                    storyAdapter.submitData(lifecycle, it)
                 }
             }
         }
     }
 
     private fun setupListener() {
-        storyAdapter = StoryAdapter(ArrayList())
-
         storyListBinding.addStory.fabStory.setOnClickListener {
             startActivity(Intent(this@StoryListActivity, AddStoryActivity::class.java))
         }
@@ -74,7 +66,6 @@ class StoryListActivity : AppCompatActivity() {
 
     private fun setupOrientation() {
         storyListBinding.apply {
-            rvStory.adapter = storyAdapter
             rvStory.setHasFixedSize(true)
 
             if (applicationContext.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -104,7 +95,7 @@ class StoryListActivity : AppCompatActivity() {
                 true
             }
             R.id.menu_logout -> {
-                storyViewModel.logout()
+                storyListViewModel.logout()
                 AlertDialog.Builder(this).apply {
                     setTitle(getString(R.string.logout))
                     setMessage(getString(R.string.success_logout_message))
@@ -115,26 +106,6 @@ class StoryListActivity : AppCompatActivity() {
                 true
             }
             else -> false
-        }
-    }
-
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            storyListBinding.apply {
-                tvChecker.visibility = View.GONE
-                pbList.visibility = View.VISIBLE
-            }
-        } else {
-            storyListBinding.apply {
-                pbList.visibility = View.GONE
-                rvStory.visibility = View.VISIBLE
-            }
-            if (storyAdapter.itemCount == 0) {
-                storyListBinding.apply {
-                    rvStory.visibility = View.GONE
-                    tvChecker.visibility = View.VISIBLE
-                }
-            }
         }
     }
 }

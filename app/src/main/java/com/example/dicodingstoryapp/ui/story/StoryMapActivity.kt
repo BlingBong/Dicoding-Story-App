@@ -29,7 +29,7 @@ class StoryMapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var storyMapBinding: ActivityStoryMapBinding
-    private val storyViewModel: StoryViewModel by viewModels()
+    private val storyMapViewModel: StoryMapViewModel by viewModels()
     private var boundsBuilder = LatLngBounds.Builder()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,9 +66,9 @@ class StoryMapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun setupViewModel() {
-        storyViewModel.getUser().observe(this) {
+        storyMapViewModel.getUser().observe(this) {
             noData(true)
-            storyViewModel.getAllStoriesWithMap(
+            storyMapViewModel.getAllStoriesWithMap(
                 it.token,
                 object : ApiCallbackString {
                     override fun responseState(success: Boolean, message: String) {
@@ -91,7 +91,7 @@ class StoryMapActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
             )
 
-            storyViewModel.itemStory.observe(this) { itemStory ->
+            storyMapViewModel.itemStory.observe(this) { itemStory ->
                 for (stories in itemStory) {
                     val latLng = LatLng(stories.lat!!, stories.lon!!)
 

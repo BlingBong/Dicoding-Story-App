@@ -25,6 +25,7 @@
     <string name="btn_disabled">Isi Terlebih Dulu</string>
     <string name="choose_this_location">Pilih Lokasi Ini</string>
     <string name="change_location">Ubah Lokasi</string>
+    <string name="retry">Coba Lagi</string>
 
     <!--hint-->
     <string name="name_hint">Masukkan nama Anda</string>
